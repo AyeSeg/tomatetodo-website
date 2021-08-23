@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/meta') %>
+</head>
+
+<body>
+
+    <%- include('./partials/header') %>
+
+    <div class="main-container">
+        <main>
+            <section>
+                <h2 class="section-title">Clásicos y Modernos</h2>
+                <div class="section-container">
+                    <div class="card-container">
+                        <% JSONProducts.forEach(product => { %>
+                            <div class="card">
+                                <img class="card-img-top" src="<%= product.img %>" alt="<%= product.name %>">
+                                <div class="card-body">
+                                  <h3 class="card-title"><%= product.name %></h3>
+                                  <p class="card-text"><%= product.description %></p>
+                                  <a href="#" class="btn-ver-receta">Ver receta</a>
+                                </div>
+                            </div>
+                        <% }); %>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <%- include('./partials/footer') %>
+    
+</body>
+
+</html>
